@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Colegio Provincial Dr. Ernesto Guevara</title>
+    <link rel="stylesheet" href="/CSS/css_notas_Alan_Peralta.css">
+</head>
+<body style="background-image: url('/Imagenes/fondo.PNG');">
+
+    <header>
+        <div class="logo">
+            <a href="inicio_carga">
+                <img src="/Imagenes/guevara.png" alt="Logo Colegio">
+            </a>
+        </div>
+        <div class="header-text">
+            <h2>Colegio Provincial Dr. Ernesto Guevara</h2>
+            <p>Notas Peralta Alan</p>
+        </div>
+        <div class="perfil" onclick="toggleMenu(event)"> <!-- Añadir evento onclick -->
+            <img src="/Imagenes/perfil.png" alt="Foto de Perfil">
+            <div class="dropdown" id="dropdown-menu"> <!-- Menú desplegable -->
+                <ul>
+                    <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <div class="notas">
+        <table>
+            <tr>
+                <th colspan="5">Apellido y Nombre:</th>
+                <th colspan="4">Curso:</th>
+                <th colspan="3">Año:</th>
+            </tr>
+            <tr>
+                <th colspan="2">Ciclo Superior de la ESO</th>
+                <th class="vertical">Matematica</th>
+                <th class="vertical">Ingles Tecnico</th>
+                <th class="vertical">Marco Juridico</th>
+                <th class="vertical">Asistencia</th>
+                <th class="vertical">Autogestion</th>
+                <th class="vertical">Programacion</th>
+                <th class="vertical">Practicas <br> profesionalizantes</th>
+                <th class="vertical">Redes</th>
+                <th class="vertical">Hardware</th>
+                <th class="vertical">Arduino</th>
+            </tr>
+            <tr>
+                <th rowspan="3">1er Cuatrimestre</th>
+                <th>1er informe</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+            <tr>
+                <th>2do informe</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+            <tr>
+                <th>NOTA</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+            </tr>
+            <tr>
+                <th rowspan="3">2do Cuatrimestre</th>
+                <th>1er informe</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+            <tr>
+                <th>2do informe</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+            <tr>
+                <th>NOTA</th>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota Final"></td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="informacion-escuela">
+                <h3>Información de la Escuela</h3>
+                <p>Email: info@colegioguevara.edu</p>
+                <p>Teléfono: +54 123 456 789</p>
+                <p><a href="https://www.facebook.com/colegioguevara" target="_blank">Facebook</a></p>
+            </div>
+
+            <div class="desarrollado">
+                <p>Desarrollado por TechFix</p>
+                <img src="/Imagenes/logo techfix.PNG.png" alt="Logo TechFix" class="logo-techfix">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation(); // Evita que el clic en la imagen cierre el menú
+            const dropdown = document.getElementById("dropdown-menu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block"; // Alterna el menú
+        }
+
+        // Cierra el menú si se hace clic fuera de él
+        window.addEventListener("click", function(event) {
+            const dropdown = document.getElementById("dropdown-menu");
+            if (!event.target.closest('.perfil')) {
+                dropdown.style.display = "none";
+            }
+        });
+
+        function logout() {
+            alert("Cerrando sesión..."); // Aquí puedes agregar la lógica para cerrar sesión
+            // Ejemplo: redirigir a la página de inicio
+            window.location.href = 'index';
+        }
+    </script>
+</body>
+</html>
