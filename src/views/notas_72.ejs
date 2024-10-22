@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Colegio Provincial Dr. Ernesto Guevara</title>
+    <link rel="stylesheet" href="/CSS/css_notas_72.css">
+</head>
+<body style="background-image: url('/Imagenes/fondo.PNG');">
+
+    <header>
+        <div class="logo">
+            <a href="inicio_carga">
+                <img src="/Imagenes/guevara.png" alt="Logo Colegio">
+            </a>
+        </div>
+        <div class="header-text">
+            <h2>Colegio Provincial Dr. Ernesto Guevara</h2>
+            <p>Notas de los Alumnos</p>
+        </div>
+        <div class="perfil" onclick="toggleMenu(event)">
+            <img src="/Imagenes/perfil.png" alt="Foto de Perfil">
+            <div class="dropdown" id="dropdown-menu">
+                <ul>
+                    <li><a href="perfil">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="notas">
+        <table>
+            <!-- Encabezado de la tabla -->
+            <tr class="header-row"> 
+                <th rowspan="4">Preceptor: Lucia</th>
+                <th colspan="10">
+                    Materia: 
+                    <span id="materia-nombre">Programacion</span>
+                    <select id="materia-select" onchange="cambiarMateria()" class="materia-select">
+                        <option value="programacion">Programacion</option>
+                        <option value="matematica">Matemática</option>
+                        <option value="marco-juridico">Marco Jurídico</option>
+                        <option value="Ingles Tecnico">Ingles Tecnico</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Practicas Profesionalizantes">Practicas Profesionalizantes</option>
+                        <option value="Taller Vocacional">Taller vocacional</option>
+                        <option value="Arduino 3">Arduino 3</option>
+                        <option value="Redes">Redes</option>
+                        <option value="Autogestion">Autogestion</option>
+                        <option value="Asistencia">Asistencia</option>
+                    </select>
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="10" style="text-align: center;">
+                    <button id="guardar-btn" onclick="guardarNotas()">Guardar</button>
+                </td>
+            </tr>
+            
+            <tr class="header-row">
+                <th colspan="3">1er cuatrimestre</th>
+                <th colspan="3">2do cuatrimestre</th>
+                <th rowspan="2">Anual</th>
+                <th colspan="2">Recuperatorio</th>
+                <th rowspan="2">Nota Final</th>
+            </tr>
+            <tr class="header-row">
+                <th>1 NP</th>
+                <th>2 NP</th>
+                <th>Nota</th>
+                <th>1 NP</th>
+                <th>2 NP</th>
+                <th>Nota</th>
+                <th>Dic</th>
+                <th>Feb</th>
+            </tr>
+
+            <!-- Fila de cada alumno -->
+            <tr>
+                <td>Alan Peralta</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Ramiro Aquino</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Axel Armella</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Joaquin Orona</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Ivan Godoy</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Lautaro Santana</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Nadia Cabañas</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Yamila Jimenez</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Luz Ferreyra</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Mariana Barnes </td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+            
+            <tr>
+                <td>Gio Pauletto </td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Franco Tedesco</td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Lautaro Escobar </td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Genesis Miranda </td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+
+            <tr>
+                <td>Tamara Alvarez </td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+                <td><input type="number" min="0" max="10" placeholder="Nota"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Cargar las notas desde el localStorage al cargar la página
+        window.onload = function() {
+            cargarNotas();
+        };
+    
+        function cambiarMateria() {
+            const materia = document.getElementById('materia-select').value;
+            document.getElementById('materia-nombre').innerText = materia.charAt(0).toUpperCase() + materia.slice(1);
+    
+            // Limpia las notas antes de cargar nuevas
+            limpiarNotas();
+            cargarNotas(); // Cargar las notas de la materia seleccionada
+        }
+    
+        function limpiarNotas() {
+            // Limpia los campos de notas
+            const notaInputs = document.querySelectorAll('input[type="number"]');
+            notaInputs.forEach(input => {
+                input.value = ''; // Limpia los campos de notas
+            });
+        }
+    
+        function guardarNotas() {
+            const materia = document.getElementById('materia-select').value;
+            const rows = document.querySelectorAll('.notas table tr:not(.header-row)');
+            const notas = {};
+            let allFieldsValid = true;
+    
+            rows.forEach((row) => {
+                const nombre = row.cells[0].innerText;
+                const nota = Array.from(row.querySelectorAll('input')).map(input => {
+                    if (input.value === "") {
+                        allFieldsValid = false;
+                    }
+                    return input.value;
+                });
+                notas[nombre] = nota;
+            });
+    
+            localStorage.setItem(materia, JSON.stringify(notas));
+            alert('Notas guardadas exitosamente');
+        }
+    
+        function cargarNotas() {
+            const materia = document.getElementById('materia-select').value;
+            const notasGuardadas = JSON.parse(localStorage.getItem(materia));
+    
+            if (notasGuardadas) {
+                const rows = document.querySelectorAll('.notas table tr:not(.header-row)');
+    
+                rows.forEach((row) => {
+                    const nombre = row.cells[0].innerText;
+                    const notas = notasGuardadas[nombre] || [];
+                    const inputs = row.querySelectorAll('input');
+    
+                    inputs.forEach((input, index) => {
+                        input.value = notas[index] || ''; // Carga las notas guardadas o deja vacío
+                    });
+                });
+            }
+        }
+    
+        function toggleMenu(event) {
+            event.stopPropagation(); // Evita que el clic en la imagen cierre el menú
+            const dropdown = document.getElementById("dropdown-menu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block"; // Alterna el menú
+        }
+
+        window.addEventListener("click", function(event) {
+            const dropdown = document.getElementById("dropdown-menu");
+            if (!event.target.closest('.perfil')) {
+                dropdown.style.display = "none";
+            }
+        });
+    
+        function logout() {
+            alert("Cerrando sesión..."); // Aquí puedes agregar la lógica para cerrar sesión
+            // Ejemplo: redirigir a la página de inicio
+            window.location.href = 'index';
+        }
+    
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (!dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+    
+</body>
+</html>
