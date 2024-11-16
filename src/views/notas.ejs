@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Colegio Provincial Dr. Ernesto Guevara</title>
+    <link rel="stylesheet" href="/CSS/css_notas.css">
+</head>
+<body style="background-image: url('/Imagenes/fondo.PNG');">
+
+    <header>
+        <div class="logo">
+            <a href="inicio_usuario">
+                <img src="/Imagenes/guevara.png" alt="Logo Colegio">
+            </a>
+        </div>
+        <div class="header-text">
+            <h2>Colegio Provincial Dr. Ernesto Guevara</h2>
+            <p>Mis notas</p>
+        </div>
+        <div class="perfil" onclick="toggleMenu(event)"> <!-- Añadir evento onclick -->
+            <img src="/Imagenes/perfil.png" alt="Foto de Perfil">
+            <div class="dropdown" id="dropdown-menu"> <!-- Menú desplegable -->
+                <ul>
+                    <li><a href="perfil">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div> <!-- Cerrar div .perfil -->
+    </header>
+
+    <div class="notas">
+        <table>
+            <!-- Encabezado de la tabla -->
+            <tr class="header-row"> 
+                <th rowspan="3">Preceptor: Lucia</th>
+            </tr>
+            
+            <tr class="header-row">
+                <th colspan="3">1er cuatrimestre</th>
+                <th colspan="3">2do cuatrimestre</th>
+                <th rowspan="2">Anual</th>
+                <th colspan="2">Recuperatorio</th>
+                <th rowspan="2">Nota Final</th>
+            </tr>
+            <tr class="header-row">
+                <th>1 NP</th>
+                <th>2 NP</th>
+                <th>Nota</th>
+                <th>1 NP</th>
+                <th>2 NP</th>
+                <th>Nota</th>
+                <th>Dic</th>
+                <th>Feb</th>
+            </tr>
+
+            <!-- Mostrar las notas de Matemáticas -->
+            <tr>
+                <td>Matematicas</td>
+                <td>
+                    <% 
+                        let matematicas1 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '1c_1np');
+                        if (matematicas1.length > 0) {
+                            %>
+                            <%= matematicas1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas2 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '1c_2np');
+                        if (matematicas2.length > 0) {
+                            %>
+                            <%= matematicas2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas3 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '1c_nota');
+                        if (matematicas3.length > 0) {
+                            %>
+                            <%= matematicas3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas4 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '2c_1np');
+                        if (matematicas4.length > 0) {
+                            %>
+                            <%= matematicas4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas5 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '2c_2np');
+                        if (matematicas5.length > 0) {
+                            %>
+                            <%= matematicas5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas6 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === '2c_nota');
+                        if (matematicas6.length > 0) {
+                            %>
+                            <%= matematicas6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas7 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === 'anual');
+                        if (matematicas7.length > 0) {
+                            %>
+                            <%= matematicas7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas8 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === 'dic');
+                        if (matematicas8.length > 0) {
+                            %>
+                            <%= matematicas8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas9 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === 'feb');
+                        if (matematicas9.length > 0) {
+                            %>
+                            <%= matematicas9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let matematicas10 = notas.filter(nota => nota.materia === 'matematicas septimo' && nota.tipo_nota === 'nota-final');
+                        if (matematicas10.length > 0) {
+                            %>
+                            <%= matematicas10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+            
+            <!-- Mostrar las notas de Programación -->
+            <tr>
+                <td>Programacion</td>
+                <td>
+                    <% 
+                        let programacion1 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '1c_1np');
+                        if (programacion1.length > 0) {
+                            %>
+                            <%= programacion1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion2 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '1c_2np');
+                        if (programacion2.length > 0) {
+                            %>
+                            <%= programacion2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion3 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '1c_nota');
+                        if (programacion3.length > 0) {
+                            %>
+                            <%= programacion3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion4 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '2c_1np');
+                        if (programacion4.length > 0) {
+                            %>
+                            <%= programacion4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion5 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '2c_2np');
+                        if (programacion5.length > 0) {
+                            %>
+                            <%= programacion5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion6 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === '2c_nota');
+                        if (programacion6.length > 0) {
+                            %>
+                            <%= programacion6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion7 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === 'anual');
+                        if (programacion7.length > 0) {
+                            %>
+                            <%= programacion7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion8 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === 'dic');
+                        if (programacion8.length > 0) {
+                            %>
+                            <%= programacion8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion9 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === 'feb');
+                        if (programacion9.length > 0) {
+                            %>
+                            <%= programacion9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let programacion10 = notas.filter(nota => nota.materia === 'programacion' && nota.tipo_nota === 'nota-final');
+                        if (programacion10.length > 0) {
+                            %>
+                            <%= programacion10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+
+            <!-- Mostrar las notas de Ingles -->
+            <tr>
+                <td>Ingles Tecnico</td>
+                <td>
+                    <% 
+                        let ingles1 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '1c_1np');
+                        if (ingles1.length > 0) {
+                            %>
+                            <%= ingles1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles2 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '1c_2np');
+                        if (ingles2.length > 0) {
+                            %>
+                            <%= ingles2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles3 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '1c_nota');
+                        if (ingles3.length > 0) {
+                            %>
+                            <%= ingles3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles4 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '2c_1np');
+                        if (ingles4.length > 0) {
+                            %>
+                            <%= ingles4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles5 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '2c_2np');
+                        if (ingles5.length > 0) {
+                            %>
+                            <%= ingles5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles6 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === '2c_nota');
+                        if (ingles6.length > 0) {
+                            %>
+                            <%= ingles6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles7 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === 'anual');
+                        if (ingles7.length > 0) {
+                            %>
+                            <%= ingles7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles8 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === 'dic');
+                        if (ingles8.length > 0) {
+                            %>
+                            <%= ingles8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles9 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === 'feb');
+                        if (ingles9.length > 0) {
+                            %>
+                            <%= ingles9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let ingles10 = notas.filter(nota => nota.materia === 'ingles tecnico septimo' && nota.tipo_nota === 'nota-final');
+                        if (ingles10.length > 0) {
+                            %>
+                            <%= ingles10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+            
+            <!-- Mostrar las notas de Marco Juridico -->
+            <tr>
+                <td>Marco juridico y derechos del trabajo</td>
+                <td>
+                    <% 
+                        let marco1 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '1c_1np');
+                        if (marco1.length > 0) {
+                            %>
+                            <%= marco1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco2 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '1c_2np');
+                        if (marco2.length > 0) {
+                            %>
+                            <%= marco2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco3 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '1c_nota');
+                        if (marco3.length > 0) {
+                            %>
+                            <%= marco3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco4 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '2c_1np');
+                        if (marco4.length > 0) {
+                            %>
+                            <%= marco4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco5 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '2c_2np');
+                        if (marco5.length > 0) {
+                            %>
+                            <%= marco5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco6 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === '2c_nota');
+                        if (marco6.length > 0) {
+                            %>
+                            <%= marco6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco7 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === 'anual');
+                        if (marco7.length > 0) {
+                            %>
+                            <%= marco7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco8 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === 'dic');
+                        if (marco8.length > 0) {
+                            %>
+                            <%= marco8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco9 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === 'feb');
+                        if (marco9.length > 0) {
+                            %>
+                            <%= marco9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let marco10 = notas.filter(nota => nota.materia === 'marco juridico y derechos del trabajo' && nota.tipo_nota === 'nota-final');
+                        if (marco10.length > 0) {
+                            %>
+                            <%= marco10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+
+            <!-- Mostrar las notas de Asistencia -->
+            <tr>
+                <td>Asistencia</td>
+                <td>
+                    <% 
+                        let asistencia1 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '1c_1np');
+                        if (asistencia1.length > 0) {
+                            %>
+                            <%= asistencia1[0].nota %>
+                            <% 
+                        }           
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia2 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '1c_2np');
+                        if (asistencia2.length > 0) {
+                            %>
+                            <%= asistencia2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia3 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '1c_nota');
+                        if (asistencia3.length > 0) {
+                            %>
+                            <%= asistencia3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia4 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '2c_1np');
+                        if (asistencia4.length > 0) {
+                            %>
+                            <%= asistencia4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia5 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '2c_2np');
+                        if (asistencia5.length > 0) {
+                            %>
+                            <%= asistencia5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia6 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === '2c_nota');
+                        if (asistencia6.length > 0) {
+                            %>
+                            <%= asistencia6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia7 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === 'anual');
+                        if (asistencia7.length > 0) {
+                            %>
+                            <%= asistencia7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia8 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === 'dic');
+                        if (asistencia8.length > 0) {
+                            %>
+                            <%= asistencia8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia9 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === 'feb');
+                        if (asistencia9.length > 0) {
+                            %>
+                            <%= asistencia9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let asistencia10 = notas.filter(nota => nota.materia === 'asistencia 2' && nota.tipo_nota === 'nota-final');
+                        if (asistencia10.length > 0) {
+                            %>
+                            <%= asistencia10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+
+            <!-- Mostrar las notas de Autogestión -->
+            <tr>
+                <td>Autogestión</td>
+                <td>
+                    <% 
+                        let autogestion1 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '1c_1np');
+                        if (autogestion1.length > 0) {
+                            %>
+                            <%= autogestion1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion2 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '1c_2np');
+                        if (autogestion2.length > 0) {
+                            %>
+                            <%= autogestion2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion3 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '1c_nota');
+                        if (autogestion3.length > 0) {
+                            %>
+                            <%= autogestion3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion4 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '2c_1np');
+                        if (autogestion4.length > 0) {
+                            %>
+                            <%= autogestion4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion5 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '2c_2np');
+                        if (autogestion5.length > 0) {
+                            %>
+                            <%= autogestion5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion6 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === '2c_nota');
+                        if (autogestion6.length > 0) {
+                            %>
+                            <%= autogestion6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion7 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === 'anual');
+                        if (autogestion7.length > 0) {
+                            %>
+                            <%= autogestion7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion8 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === 'dic');
+                        if (autogestion8.length > 0) {
+                            %>
+                            <%= autogestion8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion9 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === 'feb');
+                        if (autogestion9.length > 0) {
+                            %>
+                            <%= autogestion9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let autogestion10 = notas.filter(nota => nota.materia === 'autogestion' && nota.tipo_nota === 'nota-final');
+                        if (autogestion10.length > 0) {
+                            %>
+                            <%= autogestion10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+
+            <!-- Mostrar las notas de Hardware -->
+            <tr>
+                <td>Hardware</td>
+                <td>
+                    <% 
+                        let hardware1 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '1c_1np');
+                        if (hardware1.length > 0) {
+                            %>
+                            <%= hardware1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware2 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '1c_2np');
+                        if (hardware2.length > 0) {
+                            %>
+                            <%= hardware2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware3 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '1c_nota');
+                        if (hardware3.length > 0) {
+                            %>
+                            <%= hardware3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware4 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '2c_1np');
+                        if (hardware4.length > 0) {
+                            %>
+                            <%= hardware4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware5 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '2c_2np');
+                        if (hardware5.length > 0) {
+                            %>
+                            <%= hardware5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware6 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === '2c_nota');
+                        if (hardware6.length > 0) {
+                            %>
+                            <%= hardware6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware7 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === 'anual');
+                        if (hardware7.length > 0) {
+                            %>
+                            <%= hardware7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware8 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === 'dic');
+                        if (hardware8.length > 0) {
+                            %>
+                            <%= hardware8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware9 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === 'feb');
+                        if (hardware9.length > 0) {
+                            %>
+                            <%= hardware9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let hardware10 = notas.filter(nota => nota.materia === 'hardware' && nota.tipo_nota === 'nota-final');
+                        if (hardware10.length > 0) {
+                            %>
+                            <%= hardware10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+            
+            <!-- Mostrar las notas de Prácticas Profesionalizantes -->
+            <tr>
+                <td>Prácticas Profesionalizantes</td>
+                <td>
+                    <% 
+                        let practicas1 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '1c_1np');
+                        if (practicas1.length > 0) {
+                            %>
+                            <%= practicas1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas2 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '1c_2np');
+                        if (practicas2.length > 0) {
+                            %>
+                            <%= practicas2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas3 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '1c_nota');
+                        if (practicas3.length > 0) {
+                            %>
+                            <%= practicas3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas4 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '2c_1np');
+                        if (practicas4.length > 0) {
+                            %>
+                            <%= practicas4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas5 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '2c_2np');
+                        if (practicas5.length > 0) {
+                            %>
+                            <%= practicas5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas6 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === '2c_nota');
+                        if (practicas6.length > 0) {
+                            %>
+                            <%= practicas6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas7 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === 'anual');
+                        if (practicas7.length > 0) {
+                            %>
+                            <%= practicas7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas8 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === 'dic');
+                        if (practicas8.length > 0) {
+                            %>
+                            <%= practicas8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas9 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === 'feb');
+                        if (practicas9.length > 0) {
+                            %>
+                            <%= practicas9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let practicas10 = notas.filter(nota => nota.materia === 'practicas profesionalizantes ' && nota.tipo_nota === 'nota-final');
+                        if (practicas10.length > 0) {
+                            %>
+                            <%= practicas10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+            
+            <!-- Mostrar las notas de Redes -->
+            <tr>
+                <td>Redes</td>
+                <td>
+                    <% 
+                        let redes1 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '1c_1np');
+                        if (redes1.length > 0) {
+                            %>
+                            <%= redes1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes2 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '1c_2np');
+                        if (redes2.length > 0) {
+                            %>
+                            <%= redes2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes3 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '1c_nota');
+                        if (redes3.length > 0) {
+                            %>
+                            <%= redes3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes4 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '2c_1np');
+                        if (redes4.length > 0) {
+                            %>
+                            <%= redes4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes5 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '2c_2np');
+                        if (redes5.length > 0) {
+                            %>
+                            <%= redes5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes6 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === '2c_nota');
+                        if (redes6.length > 0) {
+                            %>
+                            <%= redes6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes7 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === 'anual');
+                        if (redes7.length > 0) {
+                            %>
+                            <%= redes7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes8 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === 'dic');
+                        if (redes8.length > 0) {
+                            %>
+                            <%= redes8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes9 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === 'feb');
+                        if (redes9.length > 0) {
+                            %>
+                            <%= redes9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let redes10 = notas.filter(nota => nota.materia === 'redes ' && nota.tipo_nota === 'nota-final');
+                        if (redes10.length > 0) {
+                            %>
+                            <%= redes10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>
+            
+            <!-- Mostrar las notas de Arduino -->
+            <tr>
+                <td>Arduino</td>
+                <td>
+                    <% 
+                        let arduino1 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '1c_1np');
+                        if (arduino1.length > 0) {
+                            %>
+                            <%= arduino1[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino2 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '1c_2np');
+                        if (arduino2.length > 0) {
+                            %>
+                            <%= arduino2[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino3 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '1c_nota');
+                        if (arduino3.length > 0) {
+                            %>
+                            <%= arduino3[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino4 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '2c_1np');
+                        if (arduino4.length > 0) {
+                            %>
+                            <%= arduino4[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino5 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '2c_2np');
+                        if (arduino5.length > 0) {
+                            %>
+                            <%= arduino5[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino6 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === '2c_nota');
+                        if (arduino6.length > 0) {
+                            %>
+                            <%= arduino6[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino7 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === 'anual');
+                        if (arduino7.length > 0) {
+                            %>
+                            <%= arduino7[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino8 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === 'dic');
+                        if (arduino8.length > 0) {
+                            %>
+                            <%= arduino8[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino9 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === 'feb');
+                        if (arduino9.length > 0) {
+                            %>
+                            <%= arduino9[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+                <td>
+                    <% 
+                        let arduino10 = notas.filter(nota => nota.materia === 'arduino ' && nota.tipo_nota === 'nota-final');
+                        if (arduino10.length > 0) {
+                            %>
+                            <%= arduino10[0].nota %>
+                            <% 
+                        }
+                    %>
+                </td>
+            </tr>            
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="informacion-escuela">
+                <h3>Información de la Escuela</h3>
+                <p>Email: info@colegioguevara.edu</p>
+                <p>Teléfono: +54 123 456 789</p>
+                <p><a href="https://www.facebook.com/colegioguevara" target="_blank">Facebook</a></p>
+            </div>
+
+            <div class="desarrollado">
+                <p>Desarrollado por TechFix</p>
+                <img src="/Imagenes/logo_techfix.png" alt="Logo TechFix" class="logo-techfix">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation(); // Evita que el clic en la imagen cierre el menú
+            const dropdown = document.getElementById("dropdown-menu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block"; // Alterna el menú
+        }
+
+        // Cierra el menú si se hace clic fuera de él
+        window.addEventListener("click", function(event) {
+            const dropdown = document.getElementById("dropdown-menu");
+            if (!event.target.closest('.perfil')) {
+                dropdown.style.display = "none";
+            }
+        });
+
+        function logout() {
+            alert("Cerrando sesión..."); // Aquí puedes agregar la lógica para cerrar sesión
+            // Ejemplo: redirigir a la página de inicio
+            window.location.href = 'index';
+        }
+    </script>
+</body>
+</html>
