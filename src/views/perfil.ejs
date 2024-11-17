@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Colegio Provincial Dr. Ernesto Guevara</title>
+    <link rel="stylesheet" href="/CSS/css_perfil.css"> <!-- Asegúrate de crear un CSS específico si es necesario -->
+</head>
+<body style="background-image: url('/Imagenes/fondo.PNG');">
+    <header>
+        <div class="logo">
+            <a href="/logo-click">
+                <img src="/Imagenes/guevara.png" alt="Logo Colegio">
+            </a>
+        </div>
+        <div class="header-text">
+            <h2>Colegio Provincial Dr. Ernesto Guevara</h2>
+            <p>Perfil</p>
+        </div>
+        <div class="perfil" onclick="toggleMenu(event)"> <!-- Añadir evento onclick -->
+            <img src="/Imagenes/perfil.png" alt="Foto de Perfil">
+            <div class="dropdown" id="dropdown-menu"> <!-- Menú desplegable -->
+                <ul>
+                    <li><a href="perfil">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+        <div class="container">
+            <h3>Detalles de la Cuenta</h3>
+            <p><strong>Nombre:</strong> <%= usuario.nombre %></p> <!-- Mostramos el nombre del usuario -->
+            <p><strong>Email:</strong> <%= usuario.correo %></p> <!-- Mostramos el email del usuario -->
+            <p><strong>DNI:</strong> <%= usuario.alumno_id %></p> <!-- Mostramos el DNI del usuario -->
+            <p><strong>Rol:</strong> <%= usuario.tipo_usuario_id %></p> <!-- Mostramos el rol del usuario (Alumno, Profesor, etc.) -->
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="informacion-escuela">
+                    <h3>Información de la Escuela</h3>
+                    <p>Email: info@colegioguevara.edu</p>
+                    <p>Teléfono: +54 123 456 789</p>
+                    <p><a href="https://www.facebook.com/colegioguevara" target="_blank">Facebook</a></p>
+                </div>
+    
+                <div class="desarrollado">
+                    <p>Desarrollado por TechFix</p>
+                    <img src="/Imagenes/logo_techfix.png" alt="Logo TechFix" class="logo-techfix">
+                </div>
+            </div>
+        </footer>
+        <script>
+            function toggleMenu(event) {
+                event.stopPropagation(); // Evita que el clic en la imagen cierre el menú
+                const dropdown = document.getElementById("dropdown-menu");
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block"; // Alterna el menú
+            }
+    
+            // Cierra el menú si se hace clic fuera de él
+            window.addEventListener("click", function(event) {
+                const dropdown = document.getElementById("dropdown-menu");
+                if (!event.target.closest('.perfil')) {
+                    dropdown.style.display = "none";
+                }
+            });
+    
+            function logout() {
+                alert("Cerrando sesión..."); // Aquí puedes agregar la lógica para cerrar sesión
+                // Ejemplo: redirigir a la página de inicio
+                window.location.href = 'index';
+            }
+        </script>
+</body>
+</html>

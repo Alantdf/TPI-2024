@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Colegio Provincial Dr. Ernesto Guevara</title>
+    <link rel="stylesheet" href="/CSS/css_notas_72.css">
+</head>
+<body style="background-image: url('/Imagenes/fondo.PNG');">
+
+    <header>
+        <div class="logo">
+            <a href="/logo-click">
+                <img src="/Imagenes/guevara.png" alt="Logo Colegio">
+            </a>
+        </div>
+        <div class="header-text">
+            <h2>Colegio Provincial Dr. Ernesto Guevara</h2>
+            <p>Notas de los Alumnos</p>
+        </div>
+        <div class="perfil" onclick="toggleMenu(event)">
+            <img src="/Imagenes/perfil.png" alt="Foto de Perfil">
+            <div class="dropdown" id="dropdown-menu">
+                <ul>
+                    <li><a href="perfil">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="notas">
+        <h1 style="text-align: center;">7º2ª</h1>
+        <form action="/guardar-nota" method="POST">
+            <!-- Select de la persona -->
+            <label for="alumno-select">Alumno:</label>
+            <select id="alumno-select" name="alumno_id" required>
+                <option value="46554636">Alan Peralta (DNI: 46554636)</option>
+                <option value="44385506">Ramiro Aquino (DNI: 44385506)</option>
+                <option value="45235506">Axel Armella (DNI: 45235506)</option>
+                <option value="4">Joaquín Orona</option>
+                <option value="5">Iván Godoy</option>
+                <option value="6">Lautaro Santana</option>
+                <option value="7">Nadia Cabañas</option>
+                <option value="8">Yamila Gimenez</option>
+                <option value="9">Luz Ferreyra</option>
+                <option value="10">Mariana Barnes</option>
+                <option value="11">Franco Tedesco</option>
+                <option value="12">Gio Pauletto</option>
+                <option value="13">Lautaro Escobar</option>
+                <option value="14">Genesis Miranda</option>
+                <option value="15">Tamara Alvarez</option>
+                <option value="27802183">Emmanuel Peralta</option>
+            </select>
+    
+            <!-- Select de la materia -->
+            <label for="materia-select">Materia:</label>
+            <select id="materia-select" name="materia_id" class="materia-select" required>
+                <option value="1">Matematica</option>
+                <option value="2">Ingles Tecnico</option>
+                <option value="3">Marco Jurídico</option>
+                <option value="4">Asistencia</option>
+                <option value="5">Autogestion</option>
+                <option value="6">Hardware</option>
+                <option value="7">practicas profesionalizantes 2</option>
+                <option value="8">Programacion</option>
+                <option value="9">Redes</option>
+                <option value="10">Arduino</option>
+            </select>
+    
+            <!-- Input de la nota -->
+            <label for="nota-input">Nota:</label>
+            <input type="number" id="nota-input" name="nota" min="0" max="10" placeholder="Nota" required>
+    
+            <!-- Select de tipo de nota -->
+            <label for="tipo-nota">Tipo de Nota:</label>
+            <select id="tipo-nota" name="tipo_nota_id" required>
+                <option value="1">1er Cuatrimestre - 1ra Nota Parcial</option>
+                <option value="2">1er Cuatrimestre - 2da Nota Parcial</option>
+                <option value="3">1er Cuatrimestre - Nota</option>
+                <option value="4">2do Cuatrimestre - 1ra Nota Parcial</option>
+                <option value="5">2do Cuatrimestre - 2da Nota Parcial</option>
+                <option value="6">2do Cuatrimestre - Nota</option>
+                <option value="7">Anual</option>
+                <option value="8">Recuperatorio - Diciembre</option>
+                <option value="9">Recuperatorio - Febrero</option>
+                <option value="10">Nota Final</option>
+            </select>
+    
+            <button id="guardar-btn" type="submit">Guardar</button>
+        </form>
+    </div>    
+
+    <footer>
+        <div class="footer-content">
+            <div class="informacion-escuela">
+                <h3>Información de la Escuela</h3>
+                <p>Email: info@colegioguevara.edu</p>
+                <p>Teléfono: +54 123 456 789</p>
+                <p><a href="https://www.facebook.com/colegioguevara" target="_blank">Facebook</a></p>
+            </div>
+
+            <div class="desarrollado">
+                <p>Desarrollado por TechFix</p>
+                <img src="/Imagenes/logo_techfix.PNG" alt="Logo TechFix" class="logo-techfix">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function cambiarMateria() {
+            const materia = document.getElementById('materia-select').value;
+            document.getElementById('materia-nombre').innerText = materia.charAt(0).toUpperCase() + materia.slice(1);
+            limpiarNotas();
+        }
+
+        function limpiarNotas() {
+            const notaInputs = document.querySelectorAll('input[type="number"]');
+            notaInputs.forEach(input => {
+                input.value = '';
+            });
+        }
+
+        function toggleMenu(event) {
+            event.stopPropagation();
+            const dropdown = document.getElementById("dropdown-menu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        window.addEventListener("click", function(event) {
+            const dropdown = document.getElementById("dropdown-menu");
+            if (!event.target.closest('.perfil')) {
+                dropdown.style.display = "none";
+            }
+        });
+
+        function logout() {
+            alert("Cerrando sesión...");
+            window.location.href = 'index';
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (!dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>    
+    
+</body>
+</html>
